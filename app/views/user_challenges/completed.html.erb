@@ -1,6 +1,6 @@
 <div class="challenge-banner text-sm-center d-flex align-items-end">
   <div class="ms-4">
-    <h1><strong><%= @completed_challenge.challenge.name %></strong></h1>
+    <h1><strong>Revisit your <br>past challenges</strong></h1>
 
     <div class="my-4">
       <button class="preference-button btn rounded-pill disabled">
@@ -27,25 +27,27 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 col-xl-6 my-2">
+    <%# <div class="col-12 col-xl-6 my-2">
       <div class="row">
         <div class="col-1">
           <i class="fa-solid fa-clock-rotate-left fa-1x"></i>
         </div>
         <div class="col-11">
           <h4><strong>Here's what you did:</strong></h4>
-          <p><%= @completed_challenge.challenge.description %></p>
-        </div>
+          <p><%= @completed_challenge.challenge.description</p>
+        <%# </div>
       </div>
-    </div>
+    </div> %>
 
-    <div class="col-12 col-xl-6 my-4">
+    <div class="container col-12 col-xl-6 my-4">
       <div class="row">
         <div class="col-1">
           <%= render "category_icons" %>
         </div>
         <div class="col-11">
-          <h4><strong>What you created:</strong></h4>
+          <h4><strong>Well done on completing <br><i><%= @completed_challenge.challenge.name %></i> <br>Here's what you created:</strong></h4>
+        </div>
+        <div class="show-card mx-auto">
           <% if @completed_challenge.challenge_text %>
             <p><%= @completed_challenge.challenge_text %></p>
           <% elsif @completed_challenge.photo.attached? %>

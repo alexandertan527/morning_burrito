@@ -1,18 +1,26 @@
 <div class="d-flex justify-content-around">
   <% @last_2_challenges.each do |challenge| %>
     <%= link_to "/completed_challenges/#{challenge.id}" do %>
-      <div class="card text-bg-primary my-3 rounded-5" style="width: 10rem; height: 10rem;">
+      <div class="dashboard-card text-dark my-3 rounded-5" style="width: 10rem; height: 10rem;">
         <div class="container py-2 d-flex flex-column justify-content-between" style="height: 100%;">
-          <div class="card-body"></div>
-          <div class="border border-black p-1 rounded-5">
-            <% if challenge.challenge.category == 'Creative Lesson' %>
-              <i class="fa-solid fa-circle-play text-dark"></i>
-            <% elsif challenge.challenge.category == 'Creative Writing' %>
-              <i class="fa-solid fa-book-open text-dark"></i>
-            <% else %>
-              <i class="fa-solid fa-paintbrush text-dark"></i>
-            <% end %>
-            <%= challenge.challenge.name.titleize %>
+          <div class="card-body border border-black p-1 rounded-5 my-1">
+            <%= image_tag "glass-icon.jpg", alt: "challenge icon", class: "glass-img"%>
+          </div>
+          <div class="button border border-black p-1 rounded-5 my-1">
+            <div class="d-flex justify-content-around align-items-center card-text">
+              <div class="">
+                <% if challenge.challenge.category == 'Creative Lesson' %>
+                  <i class="fa-solid fa-circle-play text-dark"></i>
+                <% elsif challenge.challenge.category == 'Creative Writing' %>
+                  <i class="fa-solid fa-book-open text-dark"></i>
+                <% else %>
+                  <i class="fa-solid fa-paintbrush text-dark"></i>
+                <% end %>
+              </div>
+              <div class="text-center">
+                <%= challenge.challenge.name.titleize %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
