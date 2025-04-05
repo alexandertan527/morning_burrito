@@ -14,12 +14,17 @@
   <div class="d-flex flex-column align-items-center">
     <% @completed_challenges.each do |challenge| %>
       <%= link_to "/completed_challenges/#{challenge.id}" do %>
-        <div class="card text-bg-primary my-3 rounded-5" style="width: 70vw; height: 10rem;">
-          <div class="container py-2 d-flex flex-column justify-content-between" style="height: 100%;">
-            <div class="card-body"></div>
-            <div class="border border-black p-1 rounded-5">
-              <%= @challenges.find(challenge.challenge_id).name.titleize %>
-            </div>
+        <div class="dashboard-card text-bg-primary my-3 rounded-5" style="width: 70vw; height: 10rem;">
+          <div class="card-body" style="background-color: white;"></div>
+          <div class="d-flex justify-content-evenly align-items-center card-text">
+            <% if challenge.challenge.category == 'Creative Lesson' %>
+              <i class="fa-solid fa-circle-play text-dark"></i>
+            <% elsif challenge.challenge.category == 'Creative Writing' %>
+              <i class="fa-solid fa-book-open text-dark"></i>
+            <% else %>
+              <i class="fa-solid fa-paintbrush text-dark"></i>
+            <% end %>
+            <%= challenge.challenge.name.titleize %>
           </div>
         </div>
       <% end %>

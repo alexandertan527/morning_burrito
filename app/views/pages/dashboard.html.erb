@@ -23,36 +23,44 @@
 </div>
 
 <div class="container">
-  <div class="preferences my-4 text-center">
+  <div class="preferences text-center my-5">
     <%# <h4><b>Set your creative vibe</b></h4> %>
-    <div class="my-4">
-      <%= link_to "Set your creative vibe", edit_user_path(current_user), class: "preference-button btn btn-lg rounded-pill" %>
+    <%= link_to "Set your creative vibe", edit_user_path(current_user), class: "btn-pink btn btn-lg rounded-pill" %>
+  </div>
+
+  <div class="track-cards">
+    <div class="row d-flex align-items-center">
+      <div class="col-2">
+        <%= image_tag "nachos-colour.png", class: "burrito-logo" %>
+      </div>
+      <div class="col-10">
+        <h4>Your learning track</h4>
+      </div>
     </div>
+    <% if @last_2_challenges %>
+      <%= render "your_learning_track" %>
+    <% else %>
+      <p>You have no completed challenges yet</p>
+    <% end %>
+  </div>
+  <div class="my-5">
+    <div class="row d-flex align-items-center">
+      <div class="col-2">
+        <%= image_tag "nachos-colour.png", class: "burrito-logo" %>
+      </div>
+      <div class="col-10">
+        <h4>Dive back in</h4>
+      </div>
+    </div>
+    <% if @unfinished_2_challenges %>
+      <%= render "unfinished_challenges" %>
+    <% else %>
+      <p>You haven't started a challenge yet</p>
+    <% end %>
   </div>
 
-  <div class="my-5"></div>
-
-  <div class="my-3" data-controller="tab">
-    <span class="track-cards" data-tab-target="track">
-      <% if @last_2_challenges %>
-        <h4 class="" data-tab-target="trackText" data-action="click->tab#loadLearningTrack">Your learning track</h4>
-        <%= render "your_learning_track" %>
-      <% else %>
-        <p>You have no completed challenges yet</p>
-      <% end %>
-    </span>
-    <span class="unfinished-cards" data-tab-target="unfinished">
-      <% if @unfinished_2_challenges %>
-        <h4 class="" data-tab-target="unfinishedText" data-action="click->tab#loadUnfinished">Dive back in</h4>
-        <%= render "unfinished_challenges" %>
-      <% else %>
-        <p>You haven't started a challenge yet</p>
-      <% end %>
-    </span>
-  </div>
-
-  <div class="text-center">
-    <%= link_to "Review all past challenges...", user_challenges_path, class: "show-button btn rounded-pill" %>
-    <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete}, class: "show-button btn rounded-pill" %>
+  <div class="d-flex flex-column gap-3 text-center">
+    <%= link_to "Review all past challenges...", user_challenges_path, class: "btn-pink btn rounded-pill" %>
+    <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-blue btn rounded-pill" %>
   </div>
 </div>
