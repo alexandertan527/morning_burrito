@@ -1,4 +1,20 @@
-<div class="my-4">
-  <%= link_to current_user.category_preference, edit_user_path(current_user), class: "preference-button btn btn-pink rounded-pill" %>
-  <%= link_to "#{current_user.length_preference} mins" , edit_user_path(current_user), class: "preference-button btn btn-pink rounded-pill" %>
+<div class="d-flex justify-content-between">
+  <div>
+    <button class="preference-button btn btn-pink rounded-pill my-2">
+      <% if current_user.category_preference == 'Creative Lesson' %>
+        <i class="fa-solid fa-circle-play text-dark"></i>
+      <% elsif current_user.category_preference == 'Creative Writing' %>
+        <i class="fa-solid fa-book-open text-dark"></i>
+      <% else %>
+        <i class="fa-solid fa-paintbrush text-dark"></i>
+      <% end %>
+      <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+    </button>
+  </div>
+  <div>
+    <button class="preference-button btn btn-pink rounded-pill my-2 ms-3">
+      <i class="fa-solid fa-hourglass-half text-dark"></i>
+      <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+    </button>
+  </div>
 </div>
