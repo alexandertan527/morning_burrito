@@ -9,11 +9,11 @@ def challenges
     },
 
     {
-      name: "Everyday art!",
-      description: "Take a picture of a random object around you. Let's try to help you recreate this with the perfect prompt writing. Let's be as detailed and expressive as possible.",
-      length: 6,
-      category: "Creative Writing",
-      hint: "Use at least one made-up word that fits the sound pattern."
+      name: "You said it first!",
+      description: "Record a 10-second ambient sound from your surroundings. Now, turn it into a drawing—but with a twist! Your artwork can only include three distinct elements.",
+      length: 32,
+      category: "Crafting",
+      hint: "Abstract or figurative?—both work, as long as the essence of the sound is captured."
     },
 
     {
@@ -26,15 +26,15 @@ def challenges
 
     {
       name: "Art is Haiku",
-      description: "We will give you a travel-inspired moodboard so you can recreate this as a haiku that matches its mood.",
+      description: "Write a haiku on paper, but with a twist—every word must start with 'M' or the hard 'C' sound. Listen closely… can you hear the hum of perfection?",
       length: 6,
       category: "Creative Writing",
       hint: "Use at least one made-up word that fits the sound pattern."
     },
 
     {
-      name: "Storytelling everything",
-      description: "Check this video and its caption. Awkward right? Let's try to create a script to match this video.",
+      name: "Everyday art!",
+      description: "Take a picture of a random object around you. Let's try to help you recreate this with the perfect prompt writing. Let's be as detailed and expressive as possible.",
       length: 6,
       category: "Creative Writing",
       hint: "Use at least one made-up word that fits the sound pattern."
@@ -42,10 +42,10 @@ def challenges
 
     {
       name: "Emoji Storytelling",
-      description: "Use five provided random emojis / animated icons to craft a short 50-word microstory. Bonus: Illustrate one scene from it.",
+      description: "Use these five provided random emojis 🥜 🏔️ 💌 to craft a short 50-word microstory.",
       length: 6,
       category: "Creative Writing",
-      hint: "Use at least one made-up word that fits the sound pattern."
+      hint: "Bonus: Illustrate one scene from it."
     },
 
     {
@@ -90,10 +90,10 @@ def challenges
 
     {
       name: "Found Poetry!",
-      description: "Here are 20 words that we carefully choose, arrange them to create a meaningful poem.",
+      description: "Here are 3 words that we carefully choose - shell, potatoes, herbs, arrange them to create a meaningful poem.",
       length: 32,
-      category: "Crafting",
-      hint: "Abstract or figurative?—both work, as long as the essence of the sound is captured."
+      category: "Creative Writing",
+      hint: "You're getting there, you can write this one word at a time."
     },
 
     {
