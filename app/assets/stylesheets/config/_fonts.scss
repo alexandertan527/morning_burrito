@@ -1,9 +1,17 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/recoleta');
+
+@font-face {
+  font-family: 'Recoleta';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Recoleta'), url('https://fonts.cdnfonts.com/s/31694/Recoleta-RegularDEMO.woff') format('woff');
+}
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "Recoleta", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
