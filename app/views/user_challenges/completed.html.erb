@@ -27,35 +27,43 @@
 
 <div class="container">
   <div class="row">
-    <%# <div class="col-12 col-xl-6 my-2">
+    <div class="col-1">
+      <%= render "category_icons" %>
+    </div>
+    <div class="col-11">
+      <h4><strong>Well done on completing <br><i><%= @completed_challenge.challenge.name %></i> <br>Here's what you created:</strong></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-xl-6 my-2">
       <div class="row">
         <div class="col-1">
           <i class="fa-solid fa-clock-rotate-left fa-1x"></i>
         </div>
         <div class="col-11">
           <h4><strong>Here's what you did:</strong></h4>
-          <p><%= @completed_challenge.challenge.description</p>
-        <%# </div>
+          <p><%= @completed_challenge.challenge.description %></p>
+        </div>
       </div>
-    </div> %>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-11">
+        <h4><strong>Here's what you created:</strong></h4>
+      </div>
+    </div>
 
     <div class="container col-12 col-xl-6 my-4">
-      <div class="row">
-        <div class="col-1">
-          <%= render "category_icons" %>
-        </div>
-        <div class="col-11">
-          <h4><strong>Well done on completing <br><i><%= @completed_challenge.challenge.name %></i> <br>Here's what you created:</strong></h4>
-        </div>
-        <div class="show-card mx-auto">
-          <% if @completed_challenge.challenge_text %>
-            <p><%= @completed_challenge.challenge_text %></p>
-          <% elsif @completed_challenge.photo.attached? %>
-            <p>This will be a photo</p>
-          <% else %>
-            <p>Nothing to see here... yet</p>
-          <% end %>
-        </div>
+      <div class="mx-auto">
+        <% if @completed_challenge.challenge_text %>
+          <p><%= @completed_challenge.challenge_text %></p>
+        <% elsif @completed_challenge.photo.attached? %>
+          <p>This will be a photo</p>
+        <% else %>
+          <p>Nothing to see here... yet</p>
+        <% end %>
       </div>
     </div>
   </div>
