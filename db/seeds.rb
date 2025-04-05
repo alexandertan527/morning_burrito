@@ -31,5 +31,5 @@ challenges.each do |challenge|
   new_challenge.save!
 end
 
-myUser = User.create(first_name:"pat", category_preference: "Crafting", length_preference: "6", email: "junior@email.com", password: "password")
+myUser = User.create(first_name:"pat", category_preference: "Creative Writing", length_preference: "6", email: "junior@email.com", password: "password")
  p "Challnge created"
