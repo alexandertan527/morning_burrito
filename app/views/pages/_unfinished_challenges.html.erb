@@ -6,16 +6,14 @@
           <%= image_tag "glass-icon.jpg", alt: "challenge icon", class: "glass-img"%>
         </div>
         <div class="d-flex justify-content-around align-items-center card-text">
-          <div class="">
-            <% if unfinished.challenge.category == 'Creative Lesson' %>
-              <i class="fa-solid fa-circle-play text-dark"></i>
-            <% elsif unfinished.challenge.category == 'Creative Writing' %>
-              <i class="fa-solid fa-book-open text-dark"></i>
-            <% else %>
-              <i class="fa-solid fa-paintbrush text-dark"></i>
-            <% end %>
+          <% if unfinished.challenge.category == 'Creative Lesson' %>
+            <i class="fa-solid fa-circle-play text-dark"></i>
+          <% elsif unfinished.challenge.category == 'Creative Writing' %>
+            <i class="fa-solid fa-book-open text-dark"></i>
+          <% else %>
+            <i class="fa-solid fa-paintbrush text-dark"></i>
+          <% end %>
           <%= unfinished.challenge.name.titleize %>
-          </div>
         </div>
       </div>
     <% end %>
