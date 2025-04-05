@@ -1,30 +1,21 @@
-<div class="navbar navbar-banner navbar-light navbar-lewagon fixed-bottom" data-controller="selector">
-  <div class="container d-flex justify-content-between text-center">
-    <% if user_signed_in? %>
-      <div class="col-3" data-action="click->selector#selectLink">
-        <%= link_to '', root_path, class: "nav-link fa-solid fa-house fa-2x mt-2",
-            data: {selector_target: :navLink} %>
-      </div>
-
-      <div class="col-3" data-action="click->selector#selectLink">
-        <%= link_to '', daily_challenge_path, class: "nav-link fa-solid fa-calendar-day fa-2x mt-2",
-            data: {selector_target: :navLink} %>
-      </div>
-
-      <div class="col-3" data-action="click->selector#selectLink">
-        <%= link_to '', dashboard_path, class: "nav-link fa-solid fa-user fa-2x mt-2",
-            data: {selector_target: :navLink} %>
-      </div>
-    <% else %>
-      <div class="col-6" data-action="click->selector#selectLink">
-        <%= link_to '', new_user_session_path, class: "nav-link fa-solid fa-right-to-bracket fa-2x",
-            data: {selector_target: :navLink} %>
-      </div>
-
-      <div class="col-6" data-action="click->selector#selectLink">
-        <%= link_to '', new_user_registration_path, class: "nav-link fa-solid fa-user-plus fa-2x",
-            data: {selector_target: :navLink} %>
-      </div>
+<div class="navbar navbar-banner navbar-light navbar-lewagon fixed-bottom d-flex justify-content-around text-center">
+  <% if user_signed_in? %>
+    <%= link_to root_path do %>
+      <%= image_tag "Home.png", class: "navbar-icon" %>
     <% end %>
-  </div>
+    <%= link_to daily_challenge_path do %>
+      <%= image_tag "calendar.png", class: "navbar-icon" %>
+    <% end %>
+    <%= link_to dashboard_path do %>
+      <%= image_tag "User.png", class: "navbar-icon" %>
+    <% end %>
+  <% else %>
+    <div class="col-6" data-action="click->selector#selectLink">
+      <%= link_to '', new_user_session_path, class: "nav-link fa-solid fa-right-to-bracket fa-2x" %>
+    </div>
+
+    <div class="col-6" data-action="click->selector#selectLink">
+      <%= link_to '', new_user_registration_path, class: "nav-link fa-solid fa-user-plus fa-2x" %>
+    </div>
+  <% end %>
 </div>
