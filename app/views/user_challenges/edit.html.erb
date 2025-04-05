@@ -7,9 +7,9 @@
 <div class="container">
 
   <div class="my-3">
-    <h1>
-    <%= image_tag "burrito.svg", class: "burrito-logo" %>
-      <strong>
+    <h1 class="d-flex align-items-center">
+    <%= image_tag "burrito-colour.png", class: "burrito-logo" %>
+      <strong class="ps-2">
         <%=@challenge.name%>
       </strong>
     </h1>
@@ -36,12 +36,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <p class="m-0"><i class="fa-solid fa-pepper-hot"></i> Spicy Push</p>
+          <p class="m-0"><i class="fa-solid fa-pepper-hot"></i> Hint</p>
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <p><%= @challenge.hint %></p>
         </div>
       </div>
     </div>
