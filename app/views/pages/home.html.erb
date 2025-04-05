@@ -9,13 +9,15 @@
   <% if user_signed_in? %>
     <h3>Unlock your new challenge</h2>
     <p>Boost your creative thinking in minutes each day!</p>
+
     <div class= "p-3 m-5">
       <% if current_user.length_preference == nil || current_user.category_preference == nil %>
-        <%= link_to "Set your challenge preferences", edit_user_path(current_user), class: "show-button btn btn-pink btn-lg rounded-pill" %>
+        <%= link_to "Set your preferences", edit_user_path(current_user), class: "show-button btn btn-pink btn-lg rounded-pill" %>
       <% else %>
         <%= link_to "Jump back in", daily_challenge_path, class: "show-button btn btn-pink btn-lg rounded-pill" %>
       <% end %>
     </div>
+
   <% else %>
     <h3>Enjoy your daily boost of creativity</h2>
     <p>Explore, create and think outside the box in just a few minutes each day!</p>
