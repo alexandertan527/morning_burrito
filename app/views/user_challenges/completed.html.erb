@@ -27,35 +27,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-1">
-      <%= render "category_icons" %>
+    <div class="col-2">
+      <%= image_tag "burrito-colour.png", class: "burrito-logo" %>
     </div>
-    <div class="col-11">
-      <h4><strong>Well done on completing <br><i><%= @completed_challenge.challenge.name %></i> <br>Here's what you created:</strong></h4>
+    <div class="col-10">
+      <h4><strong>Well done on completing <br><i><%= @completed_challenge.challenge.name %></i> !</strong></h4>
+      <p><%= @completed_challenge.challenge.description %></p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-xl-6 my-2">
-      <div class="row">
-        <div class="col-1">
-          <i class="fa-solid fa-clock-rotate-left fa-1x"></i>
-        </div>
-        <div class="col-11">
-          <h4><strong>Here's what you did:</strong></h4>
-          <p><%= @completed_challenge.challenge.description %></p>
-        </div>
-      </div>
+  <div class="row my-5">
+    <div class="col-2">
+      <%= image_tag "nachos-colour.png", class: "burrito-logo" %>
     </div>
-
-    <div class="row">
-      <div class="col-1">
-      </div>
-      <div class="col-11">
-        <h4><strong>Here's what you created:</strong></h4>
-      </div>
-    </div>
-
-    <div class="container col-12 col-xl-6 my-4">
+    <div class="col-10">
+      <h4><strong>Here is what you did!</strong></h4>
       <div class="mx-auto">
         <% if @completed_challenge.challenge_text %>
           <p><%= @completed_challenge.challenge_text %></p>
