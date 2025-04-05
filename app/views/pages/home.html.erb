@@ -1,34 +1,24 @@
-<div class="container text-center">
-  <h1 class="my-4">
-    Morning<br>
-    Burrito
+<div class="container text-center mt-5">
+  <h1>
+    <strong>Morning<br>
+    Burrito</strong>
   </h1>
 
-  <div class="p-3"></div>
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
+  <%= image_tag "homelogo.png", class: "img-fluid rounded-circle" %>
 
-  <div class="p-3"></div>
-
-  <p>
-    Lorem ipsum dolor sit amet
-    Lorem ipsum dolor sit amet,<br>
-    consectetur adipiscing elit, sed do <br>
-    eiusmod tempor incididunt ut <br>
-    labore et dolore magna aliqua.
-  </p>
-
-  <div class="d-grid gap-2 d-md-block my-4">
-    <% if user_signed_in? %>
-      <% if current_user.length_preference == nil || current_user.category_preference == nil %>
-        <%= link_to "Set your challenge preferences", edit_user_path(current_user), class: "show-button btn btn-lg rounded-pill" %>
-      <% else %>
-        <%= link_to "Go to your Daily Challenge", daily_challenge_path, class: "show-button btn btn-lg rounded-pill" %>
-      <% end %>
+  <% if user_signed_in? %>
+    <h3>Unlock your new challenge</h2>
+    <p>Boost your creative thinking in minutes each day!</p>
+    <% if current_user.length_preference == nil || current_user.category_preference == nil %>
+      <%= link_to "Set your challenge preferences", edit_user_path(current_user), class: "show-button btn btn-lg rounded-pill" %>
     <% else %>
-      <%= link_to "Get Started", new_user_registration_path, class: "btn show-button btn-lg rounded-pill" %>
-      <%= link_to "I already have an account", new_user_session_path, class: "show-button btn btn-lg rounded-pill" %>
+      <%= link_to "Jumb back in", daily_challenge_path, class: "show-button btn btn-lg rounded-pill" %>
     <% end %>
-  </div>
+  <% else %>
+    <h3>Enjoy your daily boost of creativity</h2>
+    <p>Explore, create and think outside the box in just a few minutes each day!</p>
+    <%= link_to "Get Started", new_user_registration_path, class: "btn show-button btn-lg rounded-pill mb-2" %>
+    <%= link_to "I already have an account", new_user_session_path, class: "show-button btn btn-lg rounded-pill mt-2" %>
+  <% end %>
+
 </div>

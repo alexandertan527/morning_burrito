@@ -5,4 +5,5 @@ class Challenge < ApplicationRecord
   validates :name, uniqueness: true
   validates :length, inclusion: { in: [6, 14, 32] }
   validates :category, inclusion: { in: ["Crafting","Creative Writing","Creative Lesson"] }
+  has_one_attached :video
 end
