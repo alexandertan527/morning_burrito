@@ -40,12 +40,12 @@
       <%= image_tag "nachos-colour.png", class: "burrito-logo" %>
     </div>
     <div class="col-10">
-      <h4><strong>Here is what you did!</strong></h4>
+      <h4 class="my-3"><strong>Here is what you did!</strong></h4>
       <div class="mx-auto">
         <% if @completed_challenge.challenge_text %>
           <p><%= @completed_challenge.challenge_text %></p>
         <% elsif @completed_challenge.photo.attached? %>
-          <p>This will be a photo</p>
+          <%= image_tag @completed_challenge.photo, style: "height: 80%; width: 80%;", class: "border border-dark rounded-4" %>
         <% else %>
           <p>Nothing to see here... yet</p>
         <% end %>

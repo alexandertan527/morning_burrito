@@ -37,7 +37,7 @@
         <h4>Your learning track</h4>
       </div>
     </div>
-    <% if @last_2_challenges %>
+    <% if @last_2_challenges.count > 0 %>
       <%= render "your_learning_track" %>
     <% else %>
       <p>You have no completed challenges yet</p>
@@ -52,7 +52,7 @@
         <h4>Dive back in</h4>
       </div>
     </div>
-    <% if @unfinished_2_challenges %>
+    <% if @unfinished_2_challenges.count > 0 %>
       <%= render "unfinished_challenges" %>
     <% else %>
       <p>You haven't started a challenge yet</p>
