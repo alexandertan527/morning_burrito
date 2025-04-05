@@ -1,68 +1,58 @@
-<div class="col-12 smaller-banner d-flex flex-column justify-content-end py-3">
+<div class="col-12 challenge-banner d-flex flex-column justify-content-end">
   <div class="ms-4">
     <h1><strong>Your creative <br>journey so far</strong></h1>
+
+    <div class="my-4">
+      <button class="preference-button btn rounded-pill my-2 disabled">
+        <% if current_user.category_preference == 'Creative Lesson' %>
+          <i class="fa-solid fa-circle-play text-dark"></i>
+        <% elsif current_user.category_preference == 'Creative Writing' %>
+          <i class="fa-solid fa-book-open text-dark"></i>
+        <% else %>
+          <i class="fa-solid fa-paintbrush text-dark"></i>
+        <% end %>
+        <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+      </button>
+
+      <button class="preference-button btn rounded-pill my-2 disabled">
+        <i class="fa-solid fa-hourglass-half text-dark"></i>
+        <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+      </button>
+    </div>
   </div>
 </div>
 
 <div class="container">
-
-  <div class="preferences ms-3 mt-5">
-    <h4 class="mb-3">Tailored for <b>you!</b></h4>
-    <% if current_user.length_preference == nil || current_user.category_preference == nil %>
-      <div class="my-4">
-        <%= link_to "Set Preferences", edit_user_path(current_user), class: "preference-button btn rounded-pill" %>
-      </div>
-    <% else %>
-      <div class="d-grid col-6 mx-auto">
-        <button class="preference-button btn btn-pink rounded-pill my-2">
-          <% if current_user.category_preference == 'Creative Lesson' %>
-            <i class="fa-solid fa-circle-play text-dark"></i>
-          <% elsif current_user.category_preference == 'Creative Writing' %>
-            <i class="fa-solid fa-book-open text-dark"></i>
-          <% else %>
-            <i class="fa-solid fa-paintbrush text-dark"></i>
-          <% end %>
-          <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
-        </button>
-      </div>
-      <div class="d-grid col-6 mx-auto">
-        <button class="preference-button btn btn-pink rounded-pill my-2">
-          <i class="fa-solid fa-hourglass-half text-dark"></i>
-          <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
-        </button>
-      </div>
-    <% end %>
+  <div class="preferences my-4 text-center">
+    <%# <h4><b>Set your creative vibe</b></h4> %>
+    <div class="my-4">
+      <%= link_to "Set your creative vibe", edit_user_path(current_user), class: "preference-button btn btn-lg rounded-pill" %>
+    </div>
   </div>
 
-  <div data-controller="tab">
-    <div class="d-flex text-center">
-      <div class="learning-track text-center mt-5">
-        <h4 class="ms-3 mb-3" data-tab-target="trackText" data-action="click->tab#loadLearningTrack">Your learning track</h4>
-        <div class="bar"></div>
-      </div>
-      <div class="unfinished-track text-center mt-5">
-        <h4 class="ms-3 mb-3" data-tab-target="unfinishedText" data-action="click->tab#loadUnfinished">Dive back in</h4>
-      </div>
-    </div>
-    <div>
-      <span class="track-cards" data-tab-target="track">
-        <% if @last_2_challenges %>
-          <%= render "your_learning_track" %>
-        <% else %>
-          <p>You have no completed challenges yet</p>
-        <% end %>
-      </span>
-      <span class="unfinished-cards d-none" data-tab-target="unfinished">
-        <% if @unfinished_2_challenges %>
-          <%= render "unfinished_challenges" %>
-        <% else %>
-          <p>You haven't started a challenge yet</p>
-        <% end %>
-      </span>
-    </div>
+  <div class="my-5"></div>
+
+  <div class="my-3" data-controller="tab">
+    <span class="track-cards" data-tab-target="track">
+      <% if @last_2_challenges %>
+        <h4 class="" data-tab-target="trackText" data-action="click->tab#loadLearningTrack">Your learning track</h4>
+        <%= render "your_learning_track" %>
+      <% else %>
+        <p>You have no completed challenges yet</p>
+      <% end %>
+    </span>
+    <span class="unfinished-cards" data-tab-target="unfinished">
+      <% if @unfinished_2_challenges %>
+        <h4 class="" data-tab-target="unfinishedText" data-action="click->tab#loadUnfinished">Dive back in</h4>
+        <%= render "unfinished_challenges" %>
+      <% else %>
+        <p>You haven't started a challenge yet</p>
+      <% end %>
+    </span>
   </div>
 
   <div class="text-center">
-    <%= link_to "Review all past challenges...", user_challenges_path, class: "show-button btn btn-pink btn-lg rounded-pill" %>
+    <%= link_to "Review all past challenges...", user_challenges_path, class: "show-button btn rounded-pill" %>
+    <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete}, class: "show-button btn rounded-pill" %>
   </div>
 </div>
