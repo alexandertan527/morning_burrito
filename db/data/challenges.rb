@@ -10,10 +10,10 @@ def challenges
 
     {
       name: "You said it first!",
-      description: "Record a 10-second ambient sound from your surroundings. Now, turn it into a drawing—but with a twist! Your artwork can only include three distinct elements.",
+      description: "Record a 10-second ambient sound from your surroundings. Now, turn it into a drawing — but with a twist! Your artwork can only include three distinct elements.",
       length: 32,
       category: "Crafting",
-      hint: "Abstract or figurative?—both work, as long as the essence of the sound is captured."
+      hint: "Abstract or figurative? — both work, as long as the essence of the sound is captured."
     },
 
     {
@@ -26,7 +26,7 @@ def challenges
 
     {
       name: "Art is Haiku",
-      description: "Write a haiku on paper, but with a twist—every word must start with 'M' or the hard 'C' sound. Listen closely… can you hear the hum of perfection?",
+      description: "Write a haiku on paper, but with a twist — every word must start with 'M' or the hard 'C' sound. Listen closely… can you hear the hum of perfection?",
       length: 6,
       category: "Creative Writing",
       hint: "Use at least one made-up word that fits the sound pattern."
@@ -45,7 +45,7 @@ def challenges
       description: "Use these five provided random emojis 🥜 🏔️ 💌 to craft a short 50-word microstory.",
       length: 6,
       category: "Creative Writing",
-      hint: "Bonus: Illustrate one scene from it."
+      hint: "Bonus: illustrate one scene from it."
     },
 
     {
@@ -90,7 +90,7 @@ def challenges
 
     {
       name: "Found Poetry!",
-      description: "Here are 3 words that we carefully choose - shell, potatoes, herbs, arrange them to create a meaningful poem.",
+      description: "Here are 3 words that we carefully chose - shell, potatoes, herbs. Arrange them to create a meaningful poem.",
       length: 32,
       category: "Creative Writing",
       hint: "You're getting there, you can write this one word at a time."
