@@ -14,7 +14,7 @@
       </div>
     <% else %>
       <div class="d-grid col-6 mx-auto">
-        <button class="preference-button btn rounded-pill my-2">
+        <button class="preference-button btn btn-pink rounded-pill my-2">
           <% if current_user.category_preference == 'Creative Lesson' %>
             <i class="fa-solid fa-circle-play text-dark"></i>
           <% elsif current_user.category_preference == 'Creative Writing' %>
@@ -26,7 +26,7 @@
         </button>
       </div>
       <div class="d-grid col-6 mx-auto">
-        <button class="preference-button btn rounded-pill my-2">
+        <button class="preference-button btn btn-pink rounded-pill my-2">
           <i class="fa-solid fa-hourglass-half text-dark"></i>
           <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
         </button>
@@ -63,6 +63,6 @@
   </div>
 
   <div class="text-center">
-    <%= link_to "Review all past challenges...", user_challenges_path, class: "show-button btn btn-lg rounded-pill" %>
+    <%= link_to "Review all past challenges...", user_challenges_path, class: "show-button btn btn-pink btn-lg rounded-pill" %>
   </div>
 </div>
