@@ -47,12 +47,12 @@
 
     <div class="d-grid gap-2 col-6 mx-auto my-4">
       <% if @unfinished %>
-        <%= link_to "Continue Challenge", edit_user_challenge_path(@unfinished),  class: "show-button btn btn-lg rounded-pill" %>
+        <%= link_to "Continue Challenge", edit_user_challenge_path(@unfinished),  class: "show-button btn btn-pink btn-lg rounded-pill" %>
       <% elsif @completed %>
-          <%= link_to "Challenge Completed", "#", class: "show-button btn btn-lg rounded-pill disabled" %>
+          <%= link_to "Challenge Completed", "#", class: "show-button btn btn-pink btn-lg rounded-pill disabled" %>
       <% else %>
         <%= simple_form_for [@daily_challenge, @user_challenge] do |f| %>
-          <%= f.submit "Time to Create!", class: "show-button btn btn-lg rounded-pill" %>
+          <%= f.submit "Time to Create!", class: "show-button btn btn-pink btn-lg rounded-pill" %>
         <% end %>
       <% end %>
     </div>
