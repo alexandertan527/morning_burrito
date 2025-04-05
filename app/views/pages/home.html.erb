@@ -12,13 +12,13 @@
     <% if current_user.length_preference == nil || current_user.category_preference == nil %>
       <%= link_to "Set your challenge preferences", edit_user_path(current_user), class: "show-button btn btn-lg rounded-pill" %>
     <% else %>
-      <%= link_to "Jumb back in", daily_challenge_path, class: "show-button btn btn-lg rounded-pill" %>
+      <%= link_to "Jump back in", daily_challenge_path, class: "show-button btn btn-pink btn-lg rounded-pill" %>
     <% end %>
   <% else %>
     <h3>Enjoy your daily boost of creativity</h2>
     <p>Explore, create and think outside the box in just a few minutes each day!</p>
-    <%= link_to "Get Started", new_user_registration_path, class: "btn show-button btn-lg rounded-pill mb-2" %>
-    <%= link_to "I already have an account", new_user_session_path, class: "show-button btn btn-lg rounded-pill mt-2" %>
+    <%= link_to "Get Started", new_user_registration_path, class: "btn show-button btn-blue btn-lg rounded-pill mb-2" %>
+    <%= link_to "I already have an account", new_user_session_path, class: "show-button btn btn-pink btn-lg rounded-pill mt-2" %>
   <% end %>
 
 </div>
