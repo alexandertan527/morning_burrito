@@ -1,5 +1,5 @@
 <% if current_user.length_preference == nil || current_user.category_preference == nil %>
-  <div class="challenge-banner text-sm-center d-flex align-items-end">
+  <div class="medium-banner text-sm-center d-flex align-items-end">
     <div class="ms-4">
       <h1><strong>Your Creative Boost <br>is Served</strong></h1>
     </div>
@@ -15,9 +15,9 @@
   </div>
 <% else %>
   <% if @daily_challenge %>
-    <div class="challenge-banner text-sm-center d-flex align-items-end">
+    <div class="medium-banner text-sm-center d-flex align-items-end">
       <div class="ms-4">
-        <h1><strong>Your Creative Boost is Served</strong></h1>
+        <h1><strong>Your Creative Boost <br> is Served</strong></h1>
 
         <div class="d-flex flex-row">
           <%= render "shared/preference_buttons" %>
@@ -27,20 +27,20 @@
 
     <div class="container">
       <div class="my-5">
-        <h1>
-          <strong>
-            We love a good<br>
+        <h1 class="d-flex align-items-center">
+          <%= image_tag "burrito-colour.png", class: "burrito-logo" %>
+          <strong class="ms-2">
             <%=@daily_challenge.name%>
           </strong>
         </h1>
       </div>
 
-      <div class="my-5">
+      <div class="my-5 border border-primary border-3 rounded p-3">
         <h4><strong>Description</strong></h4>
         <%=@daily_challenge.description %>
       </div>
 
-      <div class="accordion my-4" id="accordionExample">
+      <div class="accordion border border-primary border-3 rounded my-4" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">

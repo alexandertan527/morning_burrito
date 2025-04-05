@@ -14,7 +14,7 @@
       </strong>
     </h1>
 
-  <div class="accordion my-3" id="accordionExample">
+  <div class="accordion border border-primary border-3 rounded my-3" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -53,13 +53,16 @@
     <%= simple_form_for @user_challenge do |f| %>
       <% if @challenge.category == "Creative Writing" %>
         <div class="my-3">
-          <%= f.input :challenge_text, label: "Submit your challenge here..." %>
+          <%= f.input :challenge_text,
+          label: "Submit your challenge here...",
+          input_html: { class: "border border-primary border-3 rounded"}
+           %>
         </div>
       <% elsif @challenge.category == "Crafting" %>
         <%= f.input :photo,
           as: :file,
           required: true,
-          input_html: { data: { img_preview_target: "input", action: "change->img-preview#preview" } },
+          input_html: { data: { img_preview_target: "input", action: "change->img-preview#preview" }, class: "border border-primary border-3 rounded" },
           class: "icon"%>
       <% end %>
 
