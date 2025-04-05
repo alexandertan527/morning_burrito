@@ -25,7 +25,9 @@ export default class extends Controller {
     const category = this.categoryTarget;
     category.classList.remove("d-none");
     category.classList.add("visible");
-    category.scrollIntoView();
+    setTimeout(() => {
+      category.scrollIntoView();
+    }, 100);
   }
 
   categoryIntoView() {

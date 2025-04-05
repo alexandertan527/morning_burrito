@@ -1,10 +1,12 @@
 <div class="d-flex justify-content-around">
   <% @unfinished_2_challenges.each do |unfinished| %>
-    <%#= link_to "/completed_challenges/#{unfinished.id}" do %>
-      <div class="card text-bg-primary my-3 rounded-5" style="width: 10rem; height: 10rem;">
-        <div class="container py-2 d-flex flex-column justify-content-between" style="height: 100%;">
-          <div class="card-body"></div>
-          <div class="border border-black p-1 rounded-5">
+    <%= link_to "/user_challenges/#{unfinished.id}/edit", class: "text-dark text-decoration-none" do %>
+      <div class="dashboard-card my-3" style="width: 10rem; height: 10rem;">
+        <div class="card-body">
+          <%= image_tag "glass-icon.jpg", alt: "challenge icon", class: "glass-img"%>
+        </div>
+        <div class="d-flex justify-content-around align-items-center card-text">
+          <div class="">
             <% if unfinished.challenge.category == 'Creative Lesson' %>
               <i class="fa-solid fa-circle-play text-dark"></i>
             <% elsif unfinished.challenge.category == 'Creative Writing' %>
@@ -12,10 +14,10 @@
             <% else %>
               <i class="fa-solid fa-paintbrush text-dark"></i>
             <% end %>
-            <%= unfinished.challenge.name.titleize %>
+          <%= unfinished.challenge.name.titleize %>
           </div>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   <% end %>
 </div>
