@@ -22,6 +22,7 @@ export default class extends Controller {
   }
 
   loadCategory() {
+    console.log("hello")
     const category = this.categoryTarget;
     category.classList.remove("d-none");
     category.classList.add("visible");

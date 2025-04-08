@@ -1,23 +1,26 @@
-<div class="col-12 challenge-banner d-flex flex-column justify-content-end">
+<div class="col-12 medium-banner d-flex flex-column justify-content-end">
   <div class="ms-4">
     <h1><strong>Your creative <br>journey /strong></h1>
 
     <div class="my-4">
-      <button class="preference-button btn rounded-pill my-2 disabled">
-        <% if current_user.category_preference == 'Creative Lesson' %>
-          <i class="fa-solid fa-circle-play text-dark"></i>
-        <% elsif current_user.category_preference == 'Creative Writing' %>
-          <i class="fa-solid fa-book-open text-dark"></i>
-        <% else %>
-          <i class="fa-solid fa-paintbrush text-dark"></i>
-        <% end %>
-        <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
-      </button>
-
-      <button class="preference-button btn rounded-pill my-2 disabled">
-        <i class="fa-solid fa-hourglass-half text-dark"></i>
-        <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
-      </button>
+      <% if current_user.category_preference == nil || current_user.length_preference == nil %>
+        <h4>Set your preferences below!</h4>
+      <% else %>
+        <button class="preference-button btn rounded-pill my-2 disabled">
+          <% if current_user.category_preference == 'Creative Lesson' %>
+            <i class="fa-solid fa-circle-play text-dark"></i>
+          <% elsif current_user.category_preference == 'Creative Writing' %>
+            <i class="fa-solid fa-book-open text-dark"></i>
+          <% else %>
+            <i class="fa-solid fa-paintbrush text-dark"></i>
+          <% end %>
+          <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+        </button>
+        <button class="preference-button btn rounded-pill my-2 disabled">
+          <i class="fa-solid fa-hourglass-half text-dark"></i>
+          <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
+        </button>
+      <% end %>
     </div>
   </div>
 </div>
@@ -25,7 +28,7 @@
 <div class="container">
   <div class="preferences text-center my-5">
     <%# <h4><b>Set your creative vibe</b></h4> %>
-    <%= link_to "Set your creative vibe", edit_user_path(current_user), class: "btn-pink show-button btn btn-lg rounded-pill" %>
+    <%= link_to "Change Preferences", edit_user_path(current_user), class: "btn-pink show-button btn btn-lg rounded-pill" %>
   </div>
 
   <div class="track-cards">
