@@ -18,26 +18,30 @@
 .show-button, .preference-button {
   color: black;
   background-color: #D9D9D9;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .preference-button.disabled {
   color: black !important;
   background-color: #D9D9D9;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   text-decoration: none;
 }
 
 .show-button:hover {
   background-color: #D9D9D9;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transform: scale(1.1) perspective(1px);
   transition: transform 0.5s ease;
 }
 
 .preference-button:hover {
   background-color: #D9D9D9;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .btn-pink {
