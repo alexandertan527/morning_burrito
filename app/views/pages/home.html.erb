@@ -1,5 +1,5 @@
 <div class="container text-center mt-5">
-  <h1>
+  <h1 style="font-size: 60px;">
     <strong>Morning<br>
     Burrito</strong>
   </h1>
@@ -10,7 +10,7 @@
     <h3>Unlock your new challenge</h2>
     <p>Boost your creative thinking in minutes each day!</p>
 
-    <div class= "p-3 m-5">
+    <div class= "p-3 m-4">
       <% if current_user.length_preference == nil || current_user.category_preference == nil %>
         <%= link_to "Set your preferences", edit_user_path(current_user), class: "show-button btn btn-pink btn-lg rounded-pill" %>
       <% else %>
