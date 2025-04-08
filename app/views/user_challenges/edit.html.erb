@@ -66,11 +66,13 @@
           class: "icon"%>
       <% end %>
 
-      <% if @challenge.category == "Creative Writing" %>
-        <%= f.submit "Submit challenge", class: "show-button btn btn-pink btn-lg rounded-pill" %>
-      <% else @challenge.category == "Crafting" %>
-        <%= f.submit "Let's see what you made", class: "show-button btn btn-pink btn-lg rounded-pill" %>
-      <% end %>
+      <div class="text-center mt-3">
+        <% if @challenge.category == "Creative Writing" %>
+          <%= f.submit "Submit challenge", class: "show-button btn btn-pink btn-lg rounded-pill" %>
+        <% else @challenge.category == "Crafting" %>
+          <%= f.submit "Let's see what you made", class: "show-button btn btn-pink btn-lg rounded-pill" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
