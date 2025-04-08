@@ -1,32 +1,48 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/recoleta');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Caprasimo&family=Major+Mono+Display&family=Quicksand:wght@300..700&family=Roboto:ital,wdth,wght@0,96.1,100..900;1,96.1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Young+Serif&display=swap');
 
-@font-face {
-  font-family: 'Recoleta';
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: auto;
   font-style: normal;
+}
+
+.caprasimo-regular {
+  font-family: "Caprasimo", serif;
   font-weight: 400;
-  src: local('Recoleta'), url('https://fonts.cdnfonts.com/s/31694/Recoleta-RegularDEMO.woff') format('woff');
+  font-style: normal;
 }
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Recoleta", "Helvetica", "sans-serif";
+$body-font: "Quicksand", "Helvetica", "sans-serif";
+$headers-font: "Caprasimo", "Helvetica", "sans-serif";
 
 h1 {
-  font-family: 'Recoleta';
+  font-family: 'Caprasimo', serif;
   font-style: normal;
   font-weight: bold;
   color: #0E0000;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h4 {
-  font-family: 'Recoleta';
+  font-family: 'Caprasimo', serif;
   font-style: normal;
   font-weight: bold;
   color: #0E0000;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
 }
 
 // To use a font file (.woff) uncomment following lines
