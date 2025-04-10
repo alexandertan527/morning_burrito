@@ -47,14 +47,20 @@
 .btn-pink {
   background-color: $pink;
   color: #ffffff;
+  // font-weight: bold;
+  // font-family: $headers-font;
 }
 
 .btn-lightpink {
   background-color: #FFC7F6;;
   color: black;
+  font-family: $headers-font;
+  // font-weight: normal;
 }
 
 .btn-blue {
   background-color: $blue;
   color: #ffffff;
+  font-family: $headers-font;
+  font-weight: normal;
 }
