@@ -39,15 +39,15 @@
           </div>
         </div>
         <span class="text-center">
-          <h1><i class="icon-tick fa-solid fa-circle-check fa-2x mt-2 d-none" data-action="click->preferences#loadCategory" data-preferences-target="lengthTick"></i></h1>
+          <h1><i class="icon-tick fa-solid fa-circle-check fa-2x my-4 d-none" data-action="click->preferences#loadCategory" data-preferences-target="lengthTick"></i></h1>
         </span>
       </div>
     </div>
 
     <div class="col-sm-6 d-none" id="category-preferences" data-preferences-target="category">
-      <h1 class="d-sm-none mt-4">What's your vibe? Pick your challenge type!</h1>
+      <h1 class="d-sm-none text-center my-4">What's your vibe? Pick your challenge type!</h1>
       <div class="my-2" data-action="click->preferences#scrollCategory">
-        <div class="text-center">
+        <div class="text-center" data-action="click->preferences#loadUpdate">
           <div class="d-grid gap-4" data-action="click->preferences#categoryIntoView">
             <input type="radio" class="btn-check" name="user[category_preference]" value="Crafting" id="crafting" autocomplete="off">
             <label class="p-button btn rounded-3 d-flex align-items-center" for="crafting">
@@ -84,13 +84,18 @@
             </label>
           </div>
         </div>
-        <span class="text-center"><h1>
-          <i class="icon-tick fa-solid fa-circle-check fa-2x mt-2 d-none" data-action="click->preferences#loadUpdate" data-preferences-target="categoryTick"></i></h1>
-        </span>
+          <div class="form-update text-center my-4 d-none" data-preferences-target="update">
+            <%= f.submit "Set My Preferences", class: "show-button btn btn-pink btn-lg rounded-pill", data: { preferences_target: :categoryTick } %>
+          </div>
+        <%# <span class="text-center">
+        <h1 data-preferences-target="update"> %>
+          <%#= f.submit "" do %>
+            <%# <i class="icon-tick fa-solid fa-circle-check fa-2x mt-2 d-none" data-action="click->preferences#loadUpdate" data-preferences-target="categoryTick"></i> %>
+          <%# end %>
+          <%# <i class="icon-tick fa-solid fa-circle-check fa-2x mt-2 d-none" data-action="click->preferences#loadUpdate" data-preferences-target="categoryTick"></i> %>
+        <%# </h1>
+        </span> %>
       </div>
     </div>
-  </div>
-  <div class="form-update text-center my-2 d-none" data-preferences-target="update">
-    <%= f.submit "Set My Preferences", class: "show-button btn btn-pink btn-lg rounded-pill" %>
   </div>
 <% end %>
