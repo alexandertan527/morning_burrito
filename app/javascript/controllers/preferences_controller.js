@@ -34,7 +34,7 @@ export default class extends Controller {
   categoryIntoView() {
     this.categoryTarget.scrollIntoView();
     this.categoryTickTarget.classList.remove("d-none");
-    this.categoryTickTarget.classList.add("visible", "fa-fade");
+    this.categoryTickTarget.classList.add("visible");
   }
 
   scrollCategory() {
