@@ -6,7 +6,7 @@
       <% if current_user.category_preference == nil || current_user.length_preference == nil %>
         <h4>Set your preferences below!</h4>
       <% else %>
-        <button class="preference-button btn rounded-pill my-2 disabled">
+        <button class="preference-button btn rounded-pill my-2 disabled btn-lightpink">
           <% if current_user.category_preference == 'Creative Lesson' %>
             <i class="fa-solid fa-circle-play text-dark"></i>
           <% elsif current_user.category_preference == 'Creative Writing' %>
@@ -16,7 +16,7 @@
           <% end %>
           <%= link_to current_user.category_preference, edit_user_path(current_user), class: "text-decoration-none text-dark" %>
         </button>
-        <button class="preference-button btn rounded-pill my-2 disabled">
+        <button class="preference-button btn rounded-pill my-2 disabled btn-lightpink">
           <i class="fa-solid fa-hourglass-half text-dark"></i>
           <%= link_to "#{current_user.length_preference} minutes", edit_user_path(current_user), class: "text-decoration-none text-dark" %>
         </button>

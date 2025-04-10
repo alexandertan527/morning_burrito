@@ -22,7 +22,7 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.preference-button.disabled {
+.preference-button:disabled {
   color: black !important;
   background-color: #D9D9D9;
   border: none;
@@ -53,8 +53,9 @@
 }
 
 .btn-lightpink {
-  background-color: #FFC7F6;;
-  color: black;
+  background-color: #FFC7F6 !important;
+  color: black !important;
+  opacity: 1 !important;
 }
 
 .btn-blue {
